@@ -59,6 +59,17 @@ const vue_app = Vue.createApp({
       let day = dateArray[2];
       return `${month} ${day}, ${year}`;
     },
+    timeText(minutes) {
+      let h = Math.floor(minutes / 60);
+      let m = minutes % 60;
+      return `${h}h ${m}m`;
+    },
+    like(index) {
+      this.movies[index].likes++;
+    },
+    dislike(index) {
+      this.movies[index].dislikes++;
+    },
   },
 });
 
