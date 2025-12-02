@@ -32,21 +32,33 @@ const vue_app = Vue.createApp({
   },
   data() {
     return {
-        return {
-            title: "Alexa's Top 8 Movies",
-            owner: "Alexa",
-            github: "https://github.com/alexagold1",
-            movies: []
-        };
-      },
-      created() {
-        fetch('movies.json')
-        .then(response => response.json())
-        .then(json => { this.movies = json; });
-      },
+      title: "Alexa's Top 8 Movies",
+      owner: "Alexa",
+      github: "https://github.com/alexagold1",
+      movies: [],
+    };
   },
   methods: {
-    /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+    getMonthText(dateArray) {
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      let year = dateArray[0];
+      let month = months[dateArray[1] - 1];
+      let day = dateArray[2];
+      return `${month} ${day}, ${year}`;
+    },
   },
 });
 
