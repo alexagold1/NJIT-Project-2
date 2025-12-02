@@ -70,6 +70,10 @@ const vue_app = Vue.createApp({
     dislike(index) {
       this.movies[index].dislikes++;
     },
+    posterClick(index) {
+      let movie = this.movies[index];
+      movie.posterindex = (movie.posterindex + 1) % movie.posters.length;
+    },
   },
 });
 
