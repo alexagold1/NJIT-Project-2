@@ -20,16 +20,24 @@
 // FOR STEP 16, ADD THREE OF YOUR OWN FAVORITE MOVIES WITH METADATA TO THE END OF THE JSON FILE LIST
 */
 
+/* SITE.JS — Controls your Vue app, movie data, and all interactions */
+
 const vue_app = Vue.createApp({
-  // This automatically imports your movies.json file and puts it into
-  //   the variable: movies
+  // Load movies.json
   created() {
     fetch("movies.json")
       .then((response) => response.json())
       .then((json) => {
+        json.forEach((movie) => {
+          if (!("posterindex" in movie)) {
+            movie.posterindex = 0;
+          }
+        });
+
         this.movies = json;
       });
   },
+
   data() {
     return {
       title: "Alexa's Top 8 Movies",
@@ -38,7 +46,9 @@ const vue_app = Vue.createApp({
       movies: [],
     };
   },
+
   methods: {
+    /* Convert release date array  */
     getMonthText(dateArray) {
       const months = [
         "January",
@@ -54,22 +64,32 @@ const vue_app = Vue.createApp({
         "November",
         "December",
       ];
+
       let year = dateArray[0];
       let month = months[dateArray[1] - 1];
       let day = dateArray[2];
+
       return `${month} ${day}, ${year}`;
     },
+
+    /* Convert minutes */
     timeText(minutes) {
       let h = Math.floor(minutes / 60);
       let m = minutes % 60;
       return `${h}h ${m}m`;
     },
+
+    /* Like button handler */
     like(index) {
       this.movies[index].likes++;
     },
+
+    /* Dislike button handler */
     dislike(index) {
       this.movies[index].dislikes++;
     },
+
+    /* STEP 7 + 8 */
     posterClick(index) {
       let movie = this.movies[index];
       movie.posterindex = (movie.posterindex + 1) % movie.posters.length;

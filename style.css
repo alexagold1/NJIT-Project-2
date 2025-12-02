@@ -1,121 +1,189 @@
-/* This stylizes the page defaults */
+/* =========================
+   DEFAULT PAGE STYLING
+========================= */
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow: auto;
-    background-image: url(img/geometry.jpg);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: auto;
+  font-family: "Playwrite AU SA", sans-serif;
+  background-image: url(img/geometry.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-/* This stylizes the header area */
+/* =========================
+   HEADER STYLING
+========================= */
 .header {
-    padding: 15px;
+  padding: 15px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 .header h1 {
-    display: inline-block;
-    color: white;
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 2.2rem;
 }
 
-/* This stylizes the main page area */
+/* =========================
+   MAIN CONTENT
+========================= */
 .main {
-    background-color: #f2f2f2;
-    padding: 40px 0;
+  background-color: rgba(242, 242, 242, 0.95);
+  padding: 40px 0;
+  min-height: 100vh;
 }
 
-/* This stylizes the poster area and poster images */
+/* =========================
+   MOVIE CARD / THUMBNAIL
+========================= */
 .thumbnail {
-    border: 0px;
-    position: relative;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 0;
-    background-color:#dddddd;
+  border: 0px;
+  position: relative;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  background-color: #fefefe;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
+
+.thumbnail:hover {
+  transform: translateY(-5px);
+}
+
 .thumbnail img {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    padding: 5px;
-    border: 2px dashed black;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 5px;
+  border: 2px dashed #333;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* This stylizes your "Poster X of Y" text */
+/* =========================
+   POSTER INFO
+========================= */
 .imageInfo {
-	color: #959595;
-	font-style: italic;
-	font-size: x-small;
-	float: right;
-	padding-right: 5px;
+  color: #959595;
+  font-style: italic;
+  font-size: small;
+  float: right;
+  padding-right: 5px;
 }
 
-/* This stylizes your Title and Rating Text */
+/* =========================
+   TITLE AND RELEASE INFO
+========================= */
 .title,
 .released {
-    color: #444;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 800;
+  color: #444;
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 700;
 }
+
 .released,
 .rated {
-    color: #5d5d5d;
-    font-size: 14px;
-    font-weight: 200;
+  color: #5d5d5d;
+  font-size: 14px;
+  font-weight: 300;
 }
 
-/* This shapes your IMDB score area */
+/* =========================
+   SCORE CIRCLE
+========================= */
 .score {
-    background-color: #39D1B4;
-    color: #fff;
-    font-size: 18px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    font-weight: 200;
-    height: 80px;
-    line-height: 80px;
-    text-align: center;
-    width: 80px;
-    position: absolute;
-    top: 50px;
-    right: 25px;
+  background-color: #39d1b4;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
-/* This contains your like and dislike buttons */
+/* =========================
+   SOCIAL BUTTONS
+========================= */
 .social {
-    text-align: right;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    position: relative;
-    left: -40px;
-    top: -20px;
+  text-align: right;
+  position: relative;
+  top: -10px;
+  left: -10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-/* This shapes your like and dislike buttons */
+/* Likes / Dislikes buttons */
 .likes,
 .dislikes {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 15px;
-    line-height: 40px;
-    min-width: 70px;
-    height: 40px;
-    border-radius: 50%;
-    margin: 0 -30px 0 40px;
-    text-align: center;
-    font-weight: 200;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: 500ms;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 40px;
+  min-width: 70px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-/* This makes sure your Github Button is centered */
+/* Hover effect */
+.likes:hover {
+  background-color: #b2ffb2;
+  transform: scale(1.1);
+}
+
+.dislikes:hover {
+  background-color: #ffb2b2;
+  transform: scale(1.1);
+}
+
+/* =========================
+   FOOTER
+========================= */
 .footer {
-    text-align: center;
-    margin: 80px 0 110px;
+  text-align: center;
+  margin: 80px 0 110px;
 }
 
-/* This makes sure your Github Button text is small */
-#github{
-	font-size: small;
+#github {
+  font-size: small;
+  background-color: #24292f;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-/* ADD YOUR LIKE AND DISLIKE HOVER/MOUSEOVER CSS CODE HERE */
+#github:hover {
+  background-color: #444c56;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
