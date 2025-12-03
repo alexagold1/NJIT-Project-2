@@ -8,7 +8,7 @@ body {
   width: 100%;
   overflow: auto;
   font-family: "Playwrite AU SA", sans-serif;
-  background-image: url(img/geometry.jpg);
+  background: linear-gradient(to right, #16222a, #3a6073);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -18,8 +18,8 @@ body {
 ========================= */
 .header {
   padding: 15px 0;
-  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
+  margin-top: 10px;
 }
 .header h1 {
   display: inline-block;
@@ -97,7 +97,7 @@ body {
    SCORE CIRCLE
 ========================= */
 .score {
-  background-color: #39d1b4;
+  background-color: #16222a;
   color: #fff;
   font-size: 18px;
   font-weight: 700;
@@ -163,7 +163,7 @@ body {
 
 #github {
   font-size: small;
-  background-color: #24292f;
+  background-color: #16222a;
   color: #fff;
   border: none;
   padding: 10px 25px;
@@ -173,14 +173,11 @@ body {
 }
 
 #github:hover {
-  background-color: #444c56;
+  background-color: #3a6073;
   text-decoration: none;
   color: #fff;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 768px) {
   .col-md-6 {
     flex: 0 0 100%;
