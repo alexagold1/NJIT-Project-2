@@ -68,7 +68,7 @@ body {
    POSTER INFO
 ========================= */
 .imageInfo {
-  color: #959595;
+  color: #000000;
   font-style: italic;
   font-size: small;
   float: right;
@@ -80,7 +80,7 @@ body {
 ========================= */
 .title,
 .released {
-  color: #444;
+  color: #000000;
   margin: 0 0 5px 0;
   font-size: 18px;
   font-weight: 700;
@@ -88,7 +88,7 @@ body {
 
 .released,
 .rated {
-  color: #5d5d5d;
+  color: #000000;
   font-size: 14px;
   font-weight: 300;
 }
