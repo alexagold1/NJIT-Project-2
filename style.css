@@ -7,33 +7,57 @@ body {
   padding: 0;
   width: 100%;
   overflow: auto;
-  font-family: "Playwrite AU SA", sans-serif;
-  background: linear-gradient(to right, #16222a, #3a6073);
+  font-family: "Cinzel", serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   background-size: cover;
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 /* =========================
    HEADER STYLING
 ========================= */
 .header {
-  padding: 15px 0;
+  padding: 40px 0;
   text-align: center;
   margin-top: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.9) 0%,
+    rgba(118, 75, 162, 0.9) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
 }
 .header h1 {
   display: inline-block;
   color: #ffffff;
-  font-weight: 600;
-  font-size: 2.2rem;
+  font-weight: 900;
+  font-size: 3.5rem;
+  font-family: "Cinzel", serif;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 1),
+    0 0 60px rgba(255, 255, 255, 0.8), 3px 3px 15px rgba(0, 0, 0, 0.5);
+  letter-spacing: 3px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* =========================
    MAIN CONTENT
 ========================= */
 .main {
-  background-color: rgba(242, 242, 242, 0.95);
-  padding: 40px 0;
+  background: linear-gradient(135deg, #e0c3fc 0%, #e0c3fc 100%);
+  padding: 50px 0;
   min-height: 100vh;
 }
 
@@ -43,36 +67,47 @@ body {
 .thumbnail {
   border: 0px;
   position: relative;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 12px;
+  padding: 25px;
+  margin: 25px auto;
+  border-radius: 16px;
   background-color: #fefefe;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .thumbnail:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .thumbnail img {
   margin-top: 10px;
   margin-bottom: 15px;
-  padding: 5px;
-  border: 2px dashed #333;
-  border-radius: 6px;
+  padding: 8px;
+  border: 3px solid #667eea;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.thumbnail img:hover {
+  border-color: #764ba2;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 /* =========================
    POSTER INFO
 ========================= */
 .imageInfo {
-  color: #000000;
+  color: #666666;
   font-style: italic;
-  font-size: small;
+  font-size: 0.85rem;
   float: right;
   padding-right: 5px;
+  font-weight: 500;
 }
 
 /* =========================
@@ -80,36 +115,62 @@ body {
 ========================= */
 .title,
 .released {
-  color: #000000;
-  margin: 0 0 5px 0;
+  color: #1a1a1a;
+  margin: 12px 0 8px 0;
   font-size: 18px;
   font-weight: 700;
+  line-height: 1.4;
 }
 
 .released,
 .rated {
-  color: #000000;
+  color: #555555;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.runtime,
+.websites {
+  color: #666666;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.websites a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.websites a:hover {
+  color: #764ba2;
+  text-decoration: underline;
 }
 
 /* =========================
    SCORE CIRCLE
 ========================= */
 .score {
-  background-color: #16222a;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  height: 80px;
-  width: 80px;
-  line-height: 80px;
+  height: 90px;
+  width: 90px;
+  line-height: 90px;
   text-align: center;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
   position: absolute;
   top: 15px;
   right: 15px;
+  transition: all 0.3s ease;
+}
+
+.score:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
 }
 
 /* =========================
@@ -120,9 +181,9 @@ body {
   position: relative;
   top: -10px;
   left: -10px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  user-select: none;
+  clear: both;
+  margin-top: 15px;
 }
 
 /* Likes / Dislikes buttons */
@@ -132,25 +193,32 @@ body {
   display: inline-block;
   font-size: 15px;
   line-height: 40px;
-  min-width: 70px;
+  min-width: 80px;
   height: 40px;
-  border-radius: 50%;
-  margin: 0 10px;
+  border-radius: 25px;
+  margin: 0 8px;
   text-align: center;
   font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
 /* Hover effect */
 .likes:hover {
-  background-color: #b2ffb2;
-  transform: scale(1.1);
+  background: linear-gradient(135deg, #52c77e 0%, #37a050 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(82, 199, 126, 0.4);
 }
 
 .dislikes:hover {
-  background-color: #ffb2b2;
-  transform: scale(1.1);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
 }
 
 /* =========================
@@ -159,28 +227,50 @@ body {
 .footer {
   text-align: center;
   margin: 80px 0 110px;
+  padding: 30px 0;
 }
 
 #github {
-  font-size: small;
-  background-color: #16222a;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #fff;
   border: none;
-  padding: 10px 25px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  padding: 12px 32px;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+  display: inline-block;
 }
 
 #github:hover {
-  background-color: #3a6073;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
   text-decoration: none;
   color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
 }
 
 @media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
   .col-md-6 {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  .thumbnail {
+    margin: 15px auto;
+    padding: 20px;
+  }
+
+  .score {
+    height: 75px;
+    width: 75px;
+    line-height: 75px;
+    font-size: 18px;
   }
 }
